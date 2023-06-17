@@ -6,7 +6,7 @@
    interface (if you don't modify the .h file)
  
    It is adapted from the original no OS driver from Analog Devices
-   (license below).
+   (license in files).
   
    It is very basic and stripped down in functionality.
   
