@@ -1,32 +1,23 @@
-# _Sample project_
-
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
-
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
-
-
-
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+/*
+ *
+ *  This program provides a simple polling mode driver and example
+ *  for the ADXL345 Accelerometer from Analog Devices.
+ * 
+ *  It is designed for ESP-IDF and tailored to the ESP32S2 on the FSPI
+ *  interface (if you don't modify the .h file)
+ *
+ *  It is adapted from the original no OS driver from Analog Devices
+ *  (license below).
+ * 
+ *  It is very basic and stripped down in functionality.
+ * 
+ *  Some things to improve:
+ *   -- Get rid of need for global adxl handle
+ *   -- Develop a device structure to hold the handle, and the device settings for easy reference/checking
+ *   -- De-initialize to unallocate memory, etc. if used above.
+ *   -- Add interrupt support
+ *   -- Add feature support (activity, tap, inactivity, freefall, etc.)
+ * 
+ *  Mark Roberts (mdroberts1243@gmail.com)
+ *  Modifications are Copyright (c) 2023 Mark Roberts
+ */
